@@ -1,0 +1,34 @@
+Here is a Python function that implements bubble sort:
+
+```python
+def bubble_sort(lst):
+    """
+    Sorts a list of numbers using bubble sort.
+
+    Args:
+        lst (list): The list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Create a copy of the input list to avoid modifying it in-place
+    lst_copy = lst.copy()
+
+    # Get the length of the list
+    n = len(lst_copy)
+
+    # Repeat the process until no more swaps are needed
+    for i in range(n-1):
+        # Initialize a flag to check if any swaps were made in the current pass
+        swapped = False
+
+        # Step through the list, comparing each pair of adjacent elements
+        for j in range(n-i-1):
+            # If the current element is greater than the next one, swap them
+            if lst_copy[j] > lst_copy[j+1]:
+                lst_copy[j], lst_copy[j+1] = lst_copy[j+1], lst_copy[j]
+                # Set the flag to True to indicate that a swap was made this pass
+                swapped = True
+
+        # If no swaps were made in the current pass, the list is already

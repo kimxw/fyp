@@ -1,0 +1,14 @@
+Here is a Python function that implements bubble sort:
+
+```python
+def bubble_sort(arr):
+    """
+    Sorts a list of numbers using bubble sort.
+
+    Args:
+        arr (list): The list of numbers to sort.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+    n = len

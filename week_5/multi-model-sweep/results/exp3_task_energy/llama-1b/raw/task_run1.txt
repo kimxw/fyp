@@ -1,0 +1,66 @@
+**Bubble Sort Function in Python**
+=====================================
+
+Here's a Python function that implements the bubble sort algorithm to sort a list of numbers in ascending order.
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers in ascending order using the bubble sort algorithm.
+
+    Args:
+    numbers (list): A list of numbers to be sorted.
+
+    Returns:
+    list: The sorted list of numbers.
+    """
+    n = len(numbers)
+
+    for i in range(n):
+        # Create a flag that will allow the function to terminate early if there's nothing left to sort
+        already_sorted = True
+
+        # Start looking at each item of the list one by one, comparing it with its adjacent value
+        for j in range(n - i - 1):
+            # If we find a pair of adjacent items in the list that are in the wrong order
+            # swap them
+            if numbers[j] > numbers[j + 1]:
+                # Swap values
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+                # Since we had to swap two elements, we need to iterate over the list again.
+                already_sorted = False
+
+        # If there were no swaps during the last iteration, the list is already sorted, and we can terminate
+        if already_sorted:
+            break
+
+    return numbers
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+print("Original list:", numbers)
+sorted_numbers = bubble_sort(numbers)
+print("Sorted list:", sorted_numbers)
+```
+
+**How Bubble Sort Works**
+-------------------------
+
+Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares each pair of adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.
+
+Here's a step-by-step explanation of how bubble sort works:
+
+1.  Start at the beginning of the list.
+2.  Compare the first element with the next element. If they are in the wrong order, swap them.
+3.  Repeat step 2 until the end of the list is reached.
+4.  If no swaps occurred during the pass through the list, the list is sorted, and we can terminate.
+
+**Time Complexity**
+-------------------
+
+The time complexity of bubble sort is O(n^2) in the worst case, which means that the running time doubles with each iteration. This is because bubble sort involves comparing each pair of adjacent elements, which takes O(n) time. Therefore, bubble sort is not suitable for large datasets.
+
+**Space Complexity**
+-------------------
+
+The space complexity of bubble sort is O(1), which means that it uses constant amount of space. This is because bubble sort only uses a single pass through the list and does not require any additional data structures.

@@ -1,0 +1,39 @@
+Here's a Python implementation of the bubble sort algorithm:
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+    numbers (list): A list of numbers to be sorted.
+
+    Returns:
+    list: The sorted list of numbers.
+    """
+
+    # Get the length of the list
+    n = len(numbers)
+
+    # We will need two pointers, one to track the current element and one to track the next element
+    for i in range(n):
+        # We don't need to check if the list is empty, this loop will run at least once
+        # This loop will run at least once
+        for j in range(n - i - 1):
+            # If the current element is greater than the next element, we need to swap them
+            if numbers[j] > numbers[j + 1]:
+                # Swap the elements
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+    
+    # Return the sorted list
+    return numbers
+
+# Example usage
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted list:", sorted_numbers)
+```
+
+This function takes a list of numbers as input and returns the sorted list. It uses nested loops to repeatedly compare adjacent elements and swap them if necessary, until no more swaps are needed, indicating that the list is sorted.
+
+In the example usage, we create a list of 7 numbers and call the `bubble_sort` function to sort it. The sorted list is then printed to the console. The output will be `Sorted list: [11, 12, 22, 25, 34, 64, 90]`.

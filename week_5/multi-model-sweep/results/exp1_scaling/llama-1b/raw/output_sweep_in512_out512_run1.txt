@@ -1,0 +1,54 @@
+**Bubble Sort Implementation in Python**
+=====================================
+
+Below is an implementation of the bubble sort algorithm in Python.
+
+```python
+def bubble_sort(nums):
+    """
+    Sorts a list of numbers in ascending order using the bubble sort algorithm.
+
+    Args:
+    nums (list): The list of numbers to be sorted.
+
+    Returns:
+    list: The sorted list of numbers.
+    """
+    n = len(nums)
+    for i in range(n-1):
+        # Create a flag that will allow the function to terminate early if there's nothing left to sort
+        swapped = False
+
+        # Start looking at each item of the list one by one, comparing it with its adjacent value
+        for j in range(n-i-1):
+            # If we find an element that is greater than its adjacent item, then swap them
+            if nums[j] > nums[j+1]:
+                nums[j], nums[j+1] = nums[j+1], nums[j]
+                swapped = True
+
+        # If there were no swaps during the last iteration, the list is already sorted, and we can terminate
+        if not swapped:
+            break
+
+    return nums
+```
+
+**Example Usage**
+-----------------
+
+```python
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted numbers:", sorted_numbers)
+```
+
+This will output:
+
+```
+Sorted numbers: [11, 12, 22, 25, 34, 64, 90]
+```
+
+**Time Complexity**
+------------------
+
+The time complexity of the bubble sort algorithm is O(n^2), which means it becomes very inefficient for large datasets. The reason is that the algorithm involves a nested loop that compares each pair of adjacent elements, resulting in a quadratic number of comparisons.

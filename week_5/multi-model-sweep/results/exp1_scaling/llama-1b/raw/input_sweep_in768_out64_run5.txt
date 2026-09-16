@@ -1,0 +1,9 @@
+Here's a Python function that implements bubble sort, along with comments and an early-exit optimization to stop the algorithm once a full pass completes with no swaps.
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+    
+    Args:
+    numbers (list):

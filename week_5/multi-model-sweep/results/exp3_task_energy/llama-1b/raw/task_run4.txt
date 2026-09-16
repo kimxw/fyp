@@ -1,0 +1,54 @@
+**Bubble Sort Function in Python**
+=====================================
+
+Here's a simple implementation of the bubble sort algorithm in Python, which is one of the oldest sorting algorithms:
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers in ascending order using bubble sort.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+    n = len(numbers)
+    for i in range(n):
+        # Create a flag that will allow the function to terminate early if there's nothing left to sort
+        swapped = False
+        for j in range(n - i - 1):
+            # Swap if the current element is greater than the next element
+            if numbers[j] > numbers[j + 1]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+                swapped = True
+        # If no swaps were made in the last iteration, the list is already sorted
+        if not swapped:
+            break
+    return numbers
+
+# Example usage
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted numbers:", sorted_numbers)
+```
+
+**How Bubble Sort Works**
+---------------------------
+
+Bubble sort works by repeatedly iterating through the list and swapping adjacent elements if they are in the wrong order.
+
+1.  The outer loop (`for i in range(n)`) iterates over each pair of adjacent elements in the list.
+2.  The inner loop (`for j in range(n - i - 1)`) compares each pair of adjacent elements and swaps them if they are in the wrong order.
+3.  If no swaps were made in the last iteration, the list is already sorted, and the algorithm terminates.
+
+**Time Complexity**
+------------------
+
+The time complexity of bubble sort is O(n^2), where n is the number of items being sorted. This makes bubble sort less efficient for large lists.
+
+**Space Complexity**
+-------------------
+
+The space complexity of bubble sort is O(1), as it only uses a constant amount of extra space to store the flag and temporary swaps.

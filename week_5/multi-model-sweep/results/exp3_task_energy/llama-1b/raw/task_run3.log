@@ -1,0 +1,98 @@
+Script started on 2026-09-17 07:02:46+08:00 [COMMAND="/home/kimaya-wanjari/fyp/fernandez-cpu-followup/llama.cpp/build/bin/llama-cli -m /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf -p Write\ a\ function\ to\ sort\ a\ list\ of\ numbers\ using\ bubble\ sort. -n 1024 -c 2048 -st --no-display-prompt --temp 0.6 --top-p 0.95 --top-k 0 --min-p 0.0 " <not executed on terminal>]
+
+
+Loading model... |-\|/-\|/-\ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10791-95ef7fc16
+model      : /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+[1m[32m
+> Write a function to sort a list of numbers using bubble sort.
+[0m**Bubble Sort Function in Python**
+=====================================
+
+Here's a simple implementation of the bubble sort algorithm in Python. This function takes a list of numbers as input and sorts them in ascending order.
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Get the length of the input list
+    n = len(numbers)
+
+    # Iterate over the list n-1 times
+    for i in range(n - 1):
+        # Initialize a flag to track if any swaps were made
+        swapped = False
+
+        # Iterate over the list from the first element to the (n-i-1)th element
+        for j in range(n - i - 1):
+            # If the current element is greater than the next element, swap them
+            if numbers[j] > numbers[j + 1]:
+                # Swap the elements
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+                # Set the flag to True
+                swapped = True
+
+        # If no swaps were made in the inner loop, the list is sorted
+        if not swapped:
+            break
+
+    # Return the sorted list
+    return numbers
+
+# Example usage
+numbers = [64, 34, 25, 12, 22, 11, 90]
+print("Original list:", numbers)
+sorted_numbers = bubble_sort(numbers)
+print("Sorted list:", sorted_numbers)
+```
+
+**How It Works**
+-----------------
+
+1. The function `bubble_sort` takes a list of numbers as input.
+2. It initializes a flag `swapped` to track if any swaps were made in the inner loop.
+3. The outer loop iterates over the list `n-1` times.
+4. In each iteration of the outer loop, the inner loop iterates over the list from the first element to the `(n-i-1)`th element.
+5. If the current element is greater than the next element, they are swapped.
+6. If no swaps were made in the inner loop, the list is sorted, and the function breaks out of the outer loop.
+7. The sorted list is returned.
+
+**Time Complexity**
+-------------------
+
+The time complexity of the bubble sort algorithm is O(n^2), making it inefficient for large lists. However, it can be useful for small lists or educational purposes.
+[35m
+[ Prompt: 112.7 t/s | Generation: 25.5 t/s ]
+[0m
+
+Exiting...
+
+Script done on 2026-09-17 07:03:08+08:00 [COMMAND_EXIT_CODE="0"]
