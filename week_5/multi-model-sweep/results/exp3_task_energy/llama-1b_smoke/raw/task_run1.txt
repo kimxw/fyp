@@ -1,0 +1,60 @@
+**Bubble Sort Function**
+==========================
+
+Here's a Python function that implements the bubble sort algorithm to sort a list of numbers.
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Get the length of the input list
+    n = len(numbers)
+
+    # Repeat the process until the list is sorted
+    for i in range(n-1):
+        # Create a flag that will allow the function to terminate early if there's nothing left to sort
+        swapped = False
+
+        # Start looking at each item of the list one by one, comparing it with its adjacent value
+        for j in range(n-i-1):
+            # If we come across an element that is greater than its adjacent element, then swap them
+            if numbers[j] > numbers[j+1]:
+                # Swap values
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+                # Set the flag to True so we'll loop again after this iteration
+                swapped = True
+
+        # If there were no swaps during the last iteration, the list is sorted
+        if not swapped:
+            break
+
+    return numbers
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted numbers:", sorted_numbers)
+```
+
+**How Bubble Sort Works**
+---------------------------
+
+The bubble sort algorithm works by repeatedly swapping the adjacent elements if they are in the wrong order.
+
+1.  Start from the first element.
+2.  Compare the current element with the next one.
+3.  If they are in the correct order, move to the next pair of elements.
+4.  If they are in the wrong order, swap them and move on to the next pair.
+
+**Time Complexity**
+------------------
+
+The time complexity of bubble sort is O(n^2), which means its performance degrades rapidly as the size of the input array increases.

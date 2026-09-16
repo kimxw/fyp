@@ -1,0 +1,2 @@
+model,strategy,output_budget,input_tokens_actual,output_tokens_actual,think_tokens,answer_tokens,hit_budget,contains_return,has_code,syntax_ok,passes_tests,prefill_tokens_per_sec,decode_tokens_per_sec,cpu_freq_khz,timestamp,run,energy_joules,wall_seconds,run_ok
+llama-1b,greedy,256,422,256,0,255,1,1,1,0,0,117.2,26.0,1161515,2026-09-17T06:56:44+08:00,1,363.1893,15.107233439,1

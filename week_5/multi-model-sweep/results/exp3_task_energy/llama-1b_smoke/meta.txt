@@ -1,0 +1,14 @@
+date: 2026-09-17T06:56:09+08:00
+host: fyp-rig
+model_key: llama-1b
+model_file: /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf (771M)
+model_repo: bartowski/Llama-3.2-1B-Instruct-GGUF
+llama_cpp_commit: 7d8b567
+governor: performance
+runs: 1  cooldown_s: 8  threads: default
+test_mode: 1
+experiment: exp3_task_energy
+prompt: Write a function to sort a list of numbers using bubble sort.
+max_tokens: 1024
+ctx: 2048
+sampling: --temp 0.6 --top-p 0.95 --top-k 0 --min-p 0.0
