@@ -1,0 +1,2 @@
+strategy,input_tokens_actual,output_tokens_actual,prefill_tokens_per_sec,decode_tokens_per_sec,cpu_freq_khz,timestamp,run,energy_joules,wall_seconds
+greedy,422,133,116.7,23.7,400000,2026-09-04T06:50:20+08:00,1,312.2231,13.088062101

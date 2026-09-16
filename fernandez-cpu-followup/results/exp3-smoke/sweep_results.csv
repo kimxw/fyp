@@ -1,0 +1,2 @@
+mode,input_tokens_actual,output_tokens_actual,prefill_tokens_per_sec,decode_tokens_per_sec,cpu_freq_khz,timestamp,run,energy_joules,wall_seconds
+standard,422,133,20.0,1.3,443986,2026-09-04T07:22:20+08:00,1,3341.5408,188.664274604

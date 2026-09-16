@@ -1,0 +1,5 @@
+fernandez-cpu-followup/llama.cpp/
+fernandez-cpu-followup/models/
+*.pyc
+__pychache__/
+.DS_Store
