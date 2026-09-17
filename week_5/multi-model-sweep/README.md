@@ -24,7 +24,7 @@ Same rig (Lenovo, llama.cpp, RAPL package-0), same task, Q4_K_M for every model.
 - `RUNBOOK.md` - every command to run, in order
 - `scripts/` - `exp1_scaling.sh`, `exp2_decode_strat.sh`, `exp3_task_energy.sh` (each takes a model key),
   plus `models.sh` (registry), `common.sh` (shared helpers), `check_code.py`, `download_models.sh`,
-  `check_setup.sh`, `combine_results.sh`, `preflight.sh`
+  `check_setup.sh`, `combine_results.sh`, `rescore_code.py`, `preflight.sh`
 - `results/<experiment>/<model-key>/` - `sweep_results.csv`, `timeseries.csv`, `meta.txt`, `raw/`
 
 ## More data points

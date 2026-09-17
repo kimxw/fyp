@@ -84,13 +84,31 @@ def extract_code(answer):
     return answer if re.search(r"^\s*def \w+\(", answer, re.M) else ""
 
 
+def parse_trimmed(code):
+    """Parse the code; if that fails, drop trailing lines one at a time.
+
+    Output cut off by the token budget usually ends mid-way through an
+    example-usage line after a complete function. Trimming recovers the
+    function; a function that is itself cut off still fails (no body, or
+    fails the tests)."""
+    lines = code.rstrip().split("\n")
+    while lines:
+        try:
+            tree = ast.parse("\n".join(lines))
+            if any(isinstance(n, ast.FunctionDef) for n in tree.body):
+                return tree
+            return None
+        except SyntaxError:
+            lines.pop()
+    return None
+
+
 def check(answer):
     code = extract_code(answer)
     if not re.search(r"^\s*def \w+\(", code, re.M):
         return 0, 0, 0
-    try:
-        tree = ast.parse(code)
-    except SyntaxError:
+    tree = parse_trimmed(code)
+    if tree is None:
         return 1, 0, 0
     keep = (ast.FunctionDef, ast.ClassDef, ast.Import, ast.ImportFrom)
     tree.body = [n for n in tree.body if isinstance(n, keep)]

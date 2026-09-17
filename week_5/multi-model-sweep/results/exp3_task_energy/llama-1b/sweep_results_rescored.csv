@@ -1,0 +1,6 @@
+model,is_reasoning,max_tokens,input_tokens_actual,output_tokens_actual,think_tokens,answer_tokens,hit_budget,has_code,syntax_ok,passes_tests,prefill_tokens_per_sec,decode_tokens_per_sec,cpu_freq_khz,timestamp,run,energy_joules,wall_seconds,run_ok,has_code_v2,syntax_ok_v2,passes_tests_v2
+llama-1b,0,1024,13,587,0,587,0,1,1,1,114.3,25.1,400000,2026-09-17T07:01:47+08:00,1,585.1587,25.171931797,1,1,1,1
+llama-1b,0,1024,13,371,0,371,0,1,1,1,111.7,27.2,400000,2026-09-17T07:02:21+08:00,2,358.6411,16.112114974,1,1,1,1
+llama-1b,0,1024,13,521,0,521,0,1,1,1,112.7,25.5,400000,2026-09-17T07:02:46+08:00,3,511.6529,22.157472213,1,1,1,1
+llama-1b,0,1024,13,450,0,450,0,1,1,1,107.3,27.1,400000,2026-09-17T07:03:17+08:00,4,430.3362,19.137901778,1,1,1,1
+llama-1b,0,1024,13,488,0,488,0,1,1,1,113.9,26.0,629742,2026-09-17T07:03:44+08:00,5,481.3652,21.154948329,1,1,1,1

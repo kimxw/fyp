@@ -157,6 +157,15 @@ scp -r <lenovo-user>@<lenovo-ip>:~/fyp/week_5/multi-model-sweep/results/* ~/Proj
 ```
 Then share the three `all_models.csv` files for analysis.
 
+Re-check the code of finished runs with the current checker (writes `*_rescored.csv` next to
+the originals, which stay untouched; nothing is re-run):
+```bash
+python3 scripts/rescore_code.py              # or: python3 scripts/rescore_code.py ../results_<machine>
+```
+The Lenovo llama-1b / llama-3b runs were scored by the harness from commit 7d8b567 (unchanged through eed365e), which failed any
+run cut off mid example-usage line even when the function was complete. `passes_tests_v2` in the
+rescored CSVs is the corrected column and is what the week 5 report uses.
+
 ---
 
 ## Rough timings (estimates from week 3 speeds; 7B speeds are a guess)
