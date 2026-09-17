@@ -1,0 +1,6 @@
+model,is_reasoning,max_tokens,input_tokens_actual,output_tokens_actual,think_tokens,answer_tokens,hit_budget,has_code,syntax_ok,passes_tests,prefill_tokens_per_sec,decode_tokens_per_sec,cpu_freq_khz,timestamp,run,energy_joules,wall_seconds,run_ok
+qwen-coder-1.5b,0,1024,12,287,0,287,0,1,1,1,84.4,22.3,400000,2026-09-17T10:38:49+08:00,1,332.7676,15.104993788,1
+qwen-coder-1.5b,0,1024,12,375,0,375,0,1,1,1,77.5,22.2,400000,2026-09-17T10:39:12+08:00,2,432.0665,19.138844274,1
+qwen-coder-1.5b,0,1024,12,256,0,256,0,1,1,1,88.6,21.8,400000,2026-09-17T10:39:40+08:00,3,309.7344,13.095054732,1
+qwen-coder-1.5b,0,1024,12,523,0,523,0,1,1,1,83.3,21.8,400000,2026-09-17T10:40:02+08:00,4,603.0735,26.188984830,1
+qwen-coder-1.5b,0,1024,12,700,0,700,0,1,1,1,81.5,20.5,400000,2026-09-17T10:40:36+08:00,5,749.7369,36.286328758,1

@@ -1,0 +1,6 @@
+Certainly! Below is a Python function that implements bubble sort to sort a list of numbers. The function includes an early-exit optimization to stop the algorithm if a full pass completes with no swaps, which means the list is already sorted.
+
+```python
+def bubble_sort(arr):
+    n = len(arr)
+    swapped =

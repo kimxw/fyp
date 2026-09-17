@@ -1,0 +1,16 @@
+Sure, I can help you write a function to sort a list of numbers using bubble sort. Here's an example implementation in Python:
+```
+def bubble_sort(numbers):
+    n = len(numbers)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n-i-1):
+            if numbers[j] > numbers[j+1]:
+                # Swap the numbers
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+                swapped = True
+        # If no swaps were made in the inner loop, the list is already sorted
+        if not swapped:
+            break
+```
+In this implementation, we first calculate the length of the list and then use a nested loop to iterate through the list. For each pass through the list, we compare each pair of adjacent elements and swap them if they are in the wrong order. We keep track of whether any swaps were made in the inner loop, and if not, we know that the list is already sorted and can break out of the outer loop.

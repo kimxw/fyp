@@ -1,0 +1,38 @@
+Certainly! Below is a Python function that implements bubble sort to sort a list of numbers:
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+    return numbers
+
+# Example usage:
+unsorted_list = [64, 34, 25, 12, 22, 11, 90]
+sorted_list = bubble_sort(unsorted_list)
+print("Sorted list:", sorted_list)
+```
+
+### Explanation:
+1. **Outer Loop (`for i in range(n)`)**:
+   - This loop runs from 0 to `n-1`, where `n` is the length of the list. It represents the number of complete passes over the list.
+
+2. **Inner Loop (`for j in range(0, n-i-1)`)**:
+   - This loop runs from 0 to `n-i-1`. The `i` variable keeps track of the number of complete passes already made, so `n-i-1` ensures that we only compare elements that need to be sorted.
+
+3. **Comparison and Swap**:
+   - Inside the inner loop, we compare the elements at positions `j` and `j+1`.
+   - If the element at `j` is greater than the element at `j+1`, we swap them.
+   - This process continues until the end of the list is reached.
+
+4. **Early Exit Optimization**:
+   - After each pass, if no swaps were made, it means the list is already sorted. Therefore, we can exit the outer loop early to save time.
+
+This function will sort the list in ascending order. You can modify the comparison condition to sort in descending order by swapping the `if` and `else` statements.

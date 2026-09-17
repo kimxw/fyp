@@ -1,0 +1,11 @@
+Sure, here is a Python function that implements bubble sort:
+
+```python
+def bubble_sort(nums):
+    n = len(nums)
+    
+    for i in range(n):
+        # Flag to check if any swaps were made in the inner loop
+        swapped = False
+        
+        # Last i elements are already in place

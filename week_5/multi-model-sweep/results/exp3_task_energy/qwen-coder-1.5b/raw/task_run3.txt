@@ -1,0 +1,24 @@
+Sure! Here's a Python function that sorts a list of numbers using bubble sort:
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if numbers[j] > numbers[j+1]:
+                # Swap the numbers
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+    return numbers
+```
+
+The `bubble_sort` function takes a list of numbers as input and returns the sorted list. It uses two nested loops to iterate through the list and compare adjacent elements. If the current element is greater than the next element, it swaps them. This process is repeated until the list is sorted.
+
+Here's an example usage of the `bubble_sort` function:
+
+```python
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print(sorted_numbers)  # Output: [11, 12, 22, 25, 34, 64, 90]
+```
+
+I hope this helps! Let me know if you have any further questions.

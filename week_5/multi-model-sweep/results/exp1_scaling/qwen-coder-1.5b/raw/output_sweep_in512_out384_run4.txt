@@ -1,0 +1,32 @@
+Certainly! Below is a Python function that implements the bubble sort algorithm. The function takes a list of numbers as input and sorts them in ascending order.
+
+```python
+def bubble_sort(arr):
+    n = len(arr)
+    
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    
+    return arr
+
+# Example usage:
+if __name__ == "__main__":
+    numbers = [64, 34, 25, 12, 22, 11, 90]
+    sorted_numbers = bubble_sort(numbers)
+    print("Sorted array is:", sorted_numbers)
+```
+
+### Explanation:
+1. **Outer Loop (`for i in range(n)`)**: This loop iterates over the array from the beginning to the second last element (index `n-1`).
+2. **Inner Loop (`for j in range(0, n-i-1)`)**: This loop iterates over the array from the start to the `i`-th element.
+3. **Swap Condition**: Inside the inner loop, it checks if the element at index `j` is greater than the element at index `j+1`. If it is, it swaps these two elements.
+4. **Early Exit**: The function includes an early-exit optimization. If the inner loop completes without any swaps, it means the array is already sorted, and the function can return the array immediately.
+
+### Example:
+For the array `[64, 34

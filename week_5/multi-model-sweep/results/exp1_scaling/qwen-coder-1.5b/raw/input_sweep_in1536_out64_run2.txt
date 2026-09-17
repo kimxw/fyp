@@ -1,0 +1,10 @@
+Certainly! Below is a Python function that implements bubble sort to sort a list of numbers:
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    
+    # Traverse through all list elements
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(

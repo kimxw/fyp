@@ -1,0 +1,36 @@
+Sure! Below is a Python function that implements the bubble sort algorithm to sort a list of numbers:
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(numbers)
+print("Sorted array:", numbers)
+```
+
+### Explanation:
+1. **Outer Loop (`for i in range(n)`)**: This loop runs from the first element to the last element of the list. The loop runs `n` times, where `n` is the length of the list.
+2. **Inner Loop (`for j in range(0, n-i-1)`)**: This loop runs from the first element to the last element of the remaining unsorted portion of the list. The loop runs `n-i-1` times for each iteration of the outer loop.
+3. **Comparison and Swap (`if numbers[j] > numbers[j+1]: numbers[j], numbers[j+1] = numbers[j+1], numbers[j]`)**: Inside the inner loop, the algorithm compares the current element with the next element. If the current element is greater, it swaps them. This process continues until the largest element "bubbles" up to the end of the list.
+
+### Example:
+For the input list `[64, 34, 25, 12, 22, 11, 90]`, the bubble sort algorithm will iterate as follows:
+- First iteration: `[64, 34, 25, 12, 22, 11, 90]` (no swaps, list is already sorted)
+- Second iteration: `[11, 12, 22, 25, 34, 64, 90]` (swap 11 and 12)
+- Third iteration: `[11, 12, 22, 25, 34, 64, 90]` (no swaps, list is already sorted)
+- Fourth iteration: `[11, 12, 22, 25, 34, 64, 90]` (no swaps, list is already sorted)
+- Fifth iteration: `[11, 12, 22, 25, 34, 64, 90]` (no swaps, list is already sorted)
+- Sixth iteration: `[11, 12, 22, 25, 34, 64, 90]` (no swaps, list is already sorted)
+
+The sorted list is `[11, 12, 22, 25, 34, 64, 90]`.

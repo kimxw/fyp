@@ -1,0 +1,33 @@
+Certainly! Below is a function that implements the bubble sort algorithm to sort a list of numbers. The function includes an early-exit optimization to stop the algorithm once no more swaps are needed.
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+        # If no two elements were swapped by inner loop, then break
+        if not swapped:
+            break
+    
+    return numbers
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted list:", sorted_numbers)
+```
+
+### Explanation:
+1. **Outer Loop (`for i in range(n)`)**: This loop runs `n` times, where `n` is the number of elements in the list.
+2. **Inner Loop (`for j in range(0, n-i-1)`)**: This loop runs from the start of the list up to the end minus the number of already sorted elements.
+3. **Swap Condition (`if numbers[j] > numbers[j+1]`)**: If the current element is greater than the next element, swap them.
+4. **Early Exit Optimization (`if not swapped`)**: If no two elements were swapped by the inner loop, it means the list is already sorted, so the outer loop can break early to avoid unnecessary iterations.
+
+This implementation

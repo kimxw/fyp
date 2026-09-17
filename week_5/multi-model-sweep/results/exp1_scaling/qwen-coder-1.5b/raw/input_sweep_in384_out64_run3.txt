@@ -1,0 +1,11 @@
+Certainly! Below is a Python function that sorts a list of numbers using the bubble sort algorithm:
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    swapped = True
+    
+    while swapped:
+        swapped = False
+        for i in range(0, n-1):
+            if numbers[i]

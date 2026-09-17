@@ -1,0 +1,10 @@
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    swapped = True  # Flag to check if any swaps were made during the pass
+
+    # Iterate over each element in the list
+    while swapped:
+        swapped = False  # Reset the flag
+
+        # Traverse the list from 0

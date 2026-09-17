@@ -1,0 +1,14 @@
+date: 2026-09-17T10:41:13+08:00
+host: fyp-rig
+model_key: qwen-coder-1.5b
+model_file: /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Qwen2.5-Coder-1.5B-Instruct-Q4_K_M.gguf (941M)
+model_repo: bartowski/Qwen2.5-Coder-1.5B-Instruct-GGUF
+llama_cpp_commit: 1be3c90
+governor: performance
+runs: 5  cooldown_s: 8  threads: default
+test_mode: 0
+experiment: exp2_decode_strat
+input_requested: 512
+output_budget: 256
+ctx: 4096
+strategies: greedy=[--temp 0] temperature=[--temp 0.8 --top-k 0 --top-p 1.0 --min-p 0.0] top_p=[--temp 0.8 --top-k 0 --top-p 0.9 --min-p 0.0] top_k=[--temp 0.8 --top-k 40 --top-p 1.0 --min-p 0.0] 

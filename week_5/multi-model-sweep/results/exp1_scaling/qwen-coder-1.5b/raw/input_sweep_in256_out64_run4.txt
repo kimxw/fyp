@@ -1,0 +1,9 @@
+Certainly! Below is a Python function that implements the bubble sort algorithm to sort a list of numbers. The function includes an early-exit optimization to improve its efficiency.
+
+```python
+def bubble_sort(arr):
+    n = len(arr)
+    
+    # Traverse through all array elements
+    for i in range(n):
+       

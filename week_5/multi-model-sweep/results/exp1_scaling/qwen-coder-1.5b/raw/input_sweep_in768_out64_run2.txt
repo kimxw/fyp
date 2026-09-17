@@ -1,0 +1,7 @@
+```python
+def bubble_sort(numbers):
+    # Traverse through all elements in the list
+    for i in range(len(numbers)):
+        # Last i elements are already in place
+        for j in range(0, len(numbers) - i - 1):
+            # Traverse the list from 0 to len(numbers

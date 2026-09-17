@@ -1,0 +1,21 @@
+Here is a Python function to sort a list of numbers using bubble sort:
+
+```python
+def bubble_sort(nums):
+    n = len(nums)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if nums[j] > nums[j+1]:
+                nums[j], nums[j+1] = nums[j+1], nums[j]
+    return nums
+```
+
+Here's how it works:
+
+1. We start by defining our function `bubble_sort` which takes a list of numbers as input.
+2. We then define the length of the list `n`.
+3. We use a nested loop to iterate through the list. The outer loop runs from 0 to `n-1`, and the inner loop runs from 0 to `n-i-1`.
+4. In the inner loop, we compare the current element `nums[j]` with the next element `nums[j+1]`.
+5. If `nums[j]` is greater than `nums[j+1]`, we swap them using a tuple assignment.
+6. After the inner loop completes, the largest element in the unsorted part of the list has bubbled up to the end of the list.
+7. We repeat the outer loop

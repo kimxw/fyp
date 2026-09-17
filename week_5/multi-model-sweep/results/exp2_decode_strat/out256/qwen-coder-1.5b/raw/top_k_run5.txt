@@ -1,0 +1,27 @@
+Certainly! Below is a Python function that sorts a list of numbers using the bubble sort algorithm:
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    
+    # Traverse through all array elements
+    for i in range(n):
+        
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+    
+    return numbers
+```
+
+### Explanation:
+1. **Outer Loop (`for i in range(n)`)**:
+   - This loop iterates over each element in the list. The outer loop runs `n` times, where `n` is the length of the list.
+
+2. **Inner Loop (`for j in range(0, n-i-1)`)**:
+   - This loop runs from the start of the list to the second last element of the current iteration. The reason for this is that after `i` iterations, the largest `i` elements are already in their correct positions.
+   -

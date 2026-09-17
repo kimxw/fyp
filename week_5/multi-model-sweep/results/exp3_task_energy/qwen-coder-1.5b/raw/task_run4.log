@@ -1,0 +1,79 @@
+Script started on 2026-09-17 10:40:02+08:00 [COMMAND="/home/kimaya-wanjari/fyp/fernandez-cpu-followup/llama.cpp/build/bin/llama-cli -m /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Qwen2.5-Coder-1.5B-Instruct-Q4_K_M.gguf -p Write\ a\ function\ to\ sort\ a\ list\ of\ numbers\ using\ bubble\ sort. -n 1024 -c 2048 -st --no-display-prompt --temp 0.6 --top-p 0.95 --top-k 0 --min-p 0.0 " <not executed on terminal>]
+
+
+Loading model... |-\|/-\|/-\ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10791-95ef7fc16
+model      : /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Qwen2.5-Coder-1.5B-Instruct-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+[1m[32m
+> Write a function to sort a list of numbers using bubble sort.
+[0mCertainly! Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.
+
+Here's a Python function that implements the bubble sort algorithm:
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+    return numbers
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted array is:", sorted_numbers)
+```
+
+### Explanation:
+1. **Outer Loop (`for i in range(n)`):**
+   - This loop runs `n` times, where `n` is the number of elements in the list.
+   - It ensures that each element is moved to its correct position in the list.
+
+2. **Inner Loop (`for j in range(0, n-i-1)`):**
+   - This loop runs from the beginning of the list up to the `n-i-1`th element (since the last `i` elements are already in place).
+   - It compares each element with the next element.
+   - If the current element is greater than the next element, they are swapped.
+
+3. **Swapping Elements:**
+   - The `numbers[j]` and `numbers[j+1]` are swapped using tuple unpacking.
+
+### Example:
+For the list `[64, 34, 25, 12, 22, 11, 90]`:
+- The outer loop runs 7 times:
+  - In the first pass, the largest element `90` bubbles up to the end.
+  - In the second pass, the second largest element `89` bubbles up to the second position.
+  - And so on, until the list is sorted.
+
+The final sorted list is `[11, 12, 22, 25, 34, 64, 90]`.
+[35m
+[ Prompt: 83.3 t/s | Generation: 21.8 t/s ]
+[0m
+
+Exiting...
+
+Script done on 2026-09-17 10:40:27+08:00 [COMMAND_EXIT_CODE="0"]

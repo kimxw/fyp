@@ -1,0 +1,30 @@
+Certainly! Below is a Python function that implements the bubble sort algorithm:
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater
+            # than the next element
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+    return numbers
+
+# Example usage:
+if __name__ == "__main__":
+    sample_list = [64, 34, 25, 12, 22, 11, 90]
+    sorted_list = bubble_sort(sample_list)
+    print("Sorted list:", sorted_list)
+```
+
+### Explanation:
+1. **Outer Loop (`for i in range(n)`)**: This loop runs `n` times. Each iteration will sort the entire list up to the last unsorted element.
+2. **Inner Loop (`for j in range(0, n-i-1)`)**: This loop runs from the start of the list up to the second last unsorted element. This ensures that each element is only compared once.
+3. **Comparison and Swap (`if numbers[j] > numbers[j+1]:`)**: If the element at `j` is greater than the element at `j+1`, the two elements are swapped.
+4. **Early Exit Optimization (`return numbers`)**: After the first pass through the list, if no swaps were made, the list is already sorted. We can return the list immediately without further processing.
+
+This implementation is straightforward and easy to understand, making it a popular choice for teaching purposes.

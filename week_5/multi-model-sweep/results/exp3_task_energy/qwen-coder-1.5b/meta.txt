@@ -1,0 +1,14 @@
+date: 2026-09-17T10:38:40+08:00
+host: fyp-rig
+model_key: qwen-coder-1.5b
+model_file: /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Qwen2.5-Coder-1.5B-Instruct-Q4_K_M.gguf (941M)
+model_repo: bartowski/Qwen2.5-Coder-1.5B-Instruct-GGUF
+llama_cpp_commit: 1be3c90
+governor: performance
+runs: 5  cooldown_s: 8  threads: default
+test_mode: 0
+experiment: exp3_task_energy
+prompt: Write a function to sort a list of numbers using bubble sort.
+max_tokens: 1024
+ctx: 2048
+sampling: --temp 0.6 --top-p 0.95 --top-k 0 --min-p 0.0

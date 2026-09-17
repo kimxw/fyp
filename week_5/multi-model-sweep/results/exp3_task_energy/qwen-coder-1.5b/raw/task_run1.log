@@ -1,0 +1,58 @@
+Script started on 2026-09-17 10:38:49+08:00 [COMMAND="/home/kimaya-wanjari/fyp/fernandez-cpu-followup/llama.cpp/build/bin/llama-cli -m /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Qwen2.5-Coder-1.5B-Instruct-Q4_K_M.gguf -p Write\ a\ function\ to\ sort\ a\ list\ of\ numbers\ using\ bubble\ sort. -n 1024 -c 2048 -st --no-display-prompt --temp 0.6 --top-p 0.95 --top-k 0 --min-p 0.0 " <not executed on terminal>]
+
+
+Loading model... |-\|/-\|/-\ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10791-95ef7fc16
+model      : /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Qwen2.5-Coder-1.5B-Instruct-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+[1m[32m
+> Write a function to sort a list of numbers using bubble sort.
+[0m```python
+def bubble_sort(numbers):
+    # Get the length of the list
+    n = len(numbers)
+    
+    # Traverse through all array elements
+    for i in range(n):
+        
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(numbers)
+print("Sorted array is:", numbers)
+```
+
+In this solution, we define a function `bubble_sort` that takes a list of numbers as input. The function first calculates the length of the list. It then uses two nested loops to iterate through the list. The outer loop runs from the first element to the second-to-last element. The inner loop runs from the first element to the last element minus the current iteration number (to avoid unnecessary comparisons). During each iteration, if the current element is greater than the next element, the elements are swapped. This process is repeated until the list is sorted. Finally, the sorted list is printed.
+[35m
+[ Prompt: 84.4 t/s | Generation: 22.3 t/s ]
+[0m
+
+Exiting...
+
+Script done on 2026-09-17 10:39:03+08:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,36 @@
+Certainly! Below is a Python function that sorts a list of numbers using the bubble sort algorithm. The function includes an early-exit optimization to stop the algorithm if no more swaps are needed.
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    # Traverse through all elements in the list
+    for i in range(n):
+        # Flag to check if any swaps were made in the current pass
+        swapped = False
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the list from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+                swapped = True
+        # If no two elements were swapped, the list is already sorted
+        if not swapped:
+            break
+    return numbers
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted list:", sorted_numbers)
+```
+
+### Explanation:
+1. **Initialization**: The function `bubble_sort` takes a list of numbers as input.
+2. **Outer Loop**: The outer loop runs for `n` iterations, where `n` is the length of the list.
+3. **Inner Loop**: The inner loop runs from the beginning of the list up to the last element that has been placed in its correct position (i.e., the last `n-i-1` elements are already sorted).
+4. **Swapping Logic**: Inside the inner loop, if the current element is greater than the next element, they are swapped. The `swapped` flag is set to `True` to indicate that a swap occurred in this pass.
+5. **Early Exit**: If no two elements were swapped in the current pass, it means the list is already sorted, and the function breaks out of the outer loop.
+6. **Return**: Finally, the sorted list is returned.
+
+This implementation ensures that the list is sorted in ascending order, but it can be easily modified to sort the list in descending order by changing the comparison inside the inner loop (`if numbers[j] > numbers[j+1]:`).

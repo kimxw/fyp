@@ -1,0 +1,7 @@
+Certainly! Below is a Python function that sorts a list of numbers using bubble sort. The function includes an optional early-exit optimization to stop the algorithm early if the list becomes sorted.
+
+```python
+def bubble_sort(arr, early_exit=False):
+    n = len(arr)
+    # Traverse through all array elements
+   

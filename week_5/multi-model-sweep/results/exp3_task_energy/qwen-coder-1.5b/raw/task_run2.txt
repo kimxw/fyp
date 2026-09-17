@@ -1,0 +1,33 @@
+Certainly! Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until no more swaps are needed, which means the list is sorted.
+
+Here's a Python function to implement bubble sort:
+
+```python
+def bubble_sort(numbers):
+    n = len(numbers)
+    
+    # Traverse through all array elements
+    for i in range(n):
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+            # Traverse the array from 0 to n-i-1
+            # Swap if the element found is greater than the next element
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+    
+    return numbers
+
+# Example usage:
+if __name__ == "__main__":
+    numbers = [64, 34, 25, 12, 22, 11, 90]
+    sorted_numbers = bubble_sort(numbers)
+    print("Sorted array is:", sorted_numbers)
+```
+
+### Explanation:
+1. **Outer Loop (`for i in range(n)`)**: This loop runs `n` times, where `n` is the length of the list.
+2. **Inner Loop (`for j in range(0, n-i-1)`)**: This loop runs from 0 to `n-i-1` to compare and swap adjacent elements.
+3. **Swap Condition**: If the element at position `j` is greater than the element at position `j+1`, they are swapped.
+4. **Termination**: The outer loop stops when no more swaps are needed, meaning the list is sorted.
+
+This function will return the sorted list.
