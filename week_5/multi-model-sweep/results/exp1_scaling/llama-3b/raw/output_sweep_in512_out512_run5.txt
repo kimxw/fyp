@@ -1,0 +1,56 @@
+## Bubble Sort Function
+
+### Overview
+
+This function implements the bubble sort algorithm, which is a simple sorting algorithm that repeatedly steps through a list, compares each pair of adjacent elements, and swaps them if they are in the wrong order. The process is repeated until no more swaps are needed, at which point the list is fully sorted.
+
+### Implementation
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: A sorted list of numbers.
+    """
+
+    # Create a copy of the input list to avoid modifying it in place
+    numbers_copy = numbers.copy()
+
+    # Get the length of the list
+    n = len(numbers_copy)
+
+    # Repeat the process until no more swaps are needed
+    for i in range(n - 1):
+        # Initialize a flag to track if any swaps were made
+        swapped = False
+
+        # Step through the list and compare each pair of adjacent elements
+        for j in range(n - i - 1):
+            # If the current element is greater than the next element, swap them
+            if numbers_copy[j] > numbers_copy[j + 1]:
+                numbers_copy[j], numbers_copy[j + 1] = numbers_copy[j + 1], numbers_copy[j]
+                swapped = True
+
+        # If no swaps were made in the last pass, the list is already sorted
+        if not swapped:
+            break
+
+    # Return the sorted list
+    return numbers_copy
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print(sorted_numbers)
+```
+
+### Notes
+
+* The bubble sort algorithm has a time complexity of O(n^2) in the worst case, making it inefficient for large datasets.
+* However, it is simple to understand and implement, making it a useful teaching tool.
+* Some implementations include an early-exit optimization that stops the algorithm once a full pass completes with no swaps, since that means the list is already sorted. This optimization is not included in this implementation.

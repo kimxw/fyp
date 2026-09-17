@@ -1,0 +1,61 @@
+## Bubble Sort Function
+### Description
+This function sorts a list of numbers in ascending order using the bubble sort algorithm.
+
+### Code
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers in ascending order using bubble sort.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+    # Create a copy of the input list to avoid modifying it in place
+    numbers_copy = numbers.copy()
+
+    # Get the length of the list
+    n = len(numbers_copy)
+
+    # Iterate over the list n-1 times
+    for i in range(n-1):
+        # Initialize a flag to track if any swaps were made in the current iteration
+        swapped = False
+
+        # Iterate over the list from the first element to the (n-i-1)th element
+        for j in range(n-i-1):
+            # If the current element is greater than the next element, swap them
+            if numbers_copy[j] > numbers_copy[j+1]:
+                numbers_copy[j], numbers_copy[j+1] = numbers_copy[j+1], numbers_copy[j]
+                swapped = True
+
+        # If no swaps were made in the current iteration, the list is already sorted
+        if not swapped:
+            break
+
+    return numbers_copy
+```
+
+### Example Use Cases
+```python
+# Example 1: Sorting a list of positive numbers
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print(sorted_numbers)  # Output: [11, 12, 22, 25, 34, 64, 90]
+
+# Example 2: Sorting a list of negative numbers
+numbers = [-5, -3, -1, 0, 2, 4]
+sorted_numbers = bubble_sort(numbers)
+print(sorted_numbers)  # Output: [-5, -3, -1, 0, 2, 4]
+
+# Example 3: Sorting a list of mixed numbers
+numbers = [-5, 0, 3, -1, 2, -3]
+sorted_numbers = bubble_sort(numbers)
+print(sorted_numbers)  # Output: [-5, -3, -1, 0, 2, 3]
+```
+
+### Time Complexity
+The time complexity of bubble sort is O(n^2), where n is the number of elements in the list. This is because the algorithm involves two nested loops that iterate over the list. However, in the best case scenario (when the list is already sorted), the time complexity is O(n).

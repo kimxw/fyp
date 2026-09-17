@@ -1,0 +1,57 @@
+# Bubble Sort Function
+## Description
+This function sorts a list of numbers in ascending order using the bubble sort algorithm.
+
+## Code
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers in ascending order using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+    # Create a copy of the input list to avoid modifying it in-place
+    numbers_copy = numbers.copy()
+
+    # Get the length of the list
+    n = len(numbers_copy)
+
+    # Iterate through the list until no more swaps are needed
+    for i in range(n):
+        # Initialize a flag to track if any swaps were made in the current iteration
+        swapped = False
+
+        # Iterate through the list from the first element to the (n-i-1)th element
+        for j in range(n - 1):
+            # If the current element is greater than the next element, swap them
+            if numbers_copy[j] > numbers_copy[j + 1]:
+                numbers_copy[j], numbers_copy[j + 1] = numbers_copy[j + 1], numbers_copy[j]
+                swapped = True
+
+        # If no swaps were made in the current iteration, the list is already sorted
+        if not swapped:
+            break
+
+    return numbers_copy
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+print("Original list:", numbers)
+print("Sorted list:", bubble_sort(numbers))
+```
+
+## Explanation
+The bubble sort algorithm works by repeatedly swapping the adjacent elements if they are in wrong order.
+
+1.  Create a copy of the input list to avoid modifying it in-place.
+2.  Iterate through the list until no more swaps are needed.
+3.  In each iteration, iterate through the list from the first element to the (n-i-1)th element.
+4.  If the current element is greater than the next element, swap them.
+5.  If no swaps were made in the current iteration, the list is already sorted.
+6.  Return the sorted list.
+
+Note that bubble sort has a time complexity of O(n^2) in the worst case, making it less efficient than other sorting algorithms like quicksort or mergesort for large datasets. However, it can still be useful for small datasets or educational purposes.

@@ -1,0 +1,4 @@
+# Bubble Sort Implementation
+## Overview
+
+This code implements the bubble sort algorithm to sort a list of numbers in ascending order. It repeatedly steps through the list, comparing each pair of adjacent elements and swapping them if they are in the wrong order. The algorithm terminates when no more swaps are needed, indicating that the list is

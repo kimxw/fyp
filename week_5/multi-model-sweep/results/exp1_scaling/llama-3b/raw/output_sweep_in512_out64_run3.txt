@@ -1,0 +1,12 @@
+## Bubble Sort Function
+
+### Overview
+
+This function implements the bubble sort algorithm, which is a simple sorting algorithm that repeatedly steps through a list, compares each pair of adjacent elements, and swaps them if they are in the wrong order.
+
+### Code
+
+```python
+def bubble_sort(nums):
+    """
+    Sorts a

@@ -1,0 +1,56 @@
+### Bubble Sort Function
+
+Here's a Python implementation of the bubble sort algorithm:
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using bubble sort.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Create a copy of the input list to avoid modifying it in place
+    numbers_copy = numbers[:]
+
+    # Get the length of the list
+    n = len(numbers_copy)
+
+    # Repeat the process until no more swaps are needed
+    for i in range(n - 1):
+        
+        # Initialize a flag to track if any swaps were made in the current pass
+        swapped = False
+        
+        # Iterate through the list from the first element to the second last element
+        for j in range(n - i - 1):
+            
+            # If the current element is greater than the next element, swap them
+            if numbers_copy[j] > numbers_copy[j + 1]:
+                numbers_copy[j], numbers_copy[j + 1] = numbers_copy[j + 1], numbers_copy[j]
+                swapped = True
+        
+        # If no swaps were made in the current pass, the list is already sorted
+        if not swapped:
+            break
+
+    return numbers_copy
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted numbers:", sorted_numbers)
+```
+
+### Notes
+
+* This function takes a list of numbers as input and returns the sorted list.
+* It uses a nested loop approach to compare each pair of adjacent elements and swap them if they are in the wrong order.
+* The outer loop runs `n-1` times, where `n` is the length of the list.
+* The inner loop runs `n-i-1` times, which is the number of elements that have already been sorted.
+* The function includes an early-exit optimization that stops the algorithm once a full pass completes with no swaps, since that means the list is already sorted.
+* The function creates a copy of the input list to avoid modifying it in place.

@@ -1,0 +1,92 @@
+Script started on 2026-09-17 09:07:37+08:00 [COMMAND="/home/kimaya-wanjari/fyp/fernandez-cpu-followup/llama.cpp/build/bin/llama-cli -m /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Llama-3.2-3B-Instruct-Q4_K_M.gguf -p Write\ a\ function\ to\ sort\ a\ list\ of\ numbers\ using\ bubble\ sort. -n 1024 -c 2048 -st --no-display-prompt --temp 0.6 --top-p 0.95 --top-k 0 --min-p 0.0 " <not executed on terminal>]
+
+
+Loading model... |-\|/-\|/-\|/-\|/ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10791-95ef7fc16
+model      : /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Llama-3.2-3B-Instruct-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+[1m[32m
+> Write a function to sort a list of numbers using bubble sort.
+[0m**Bubble Sort Function**
+========================
+
+Here's a Python implementation of the bubble sort algorithm:
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Create a copy of the input list to avoid modifying it in-place
+    numbers_copy = numbers.copy()
+
+    # Get the length of the list
+    n = len(numbers_copy)
+
+    # Repeat the process until no more swaps are needed
+    for i in range(n):
+        # Initialize a flag to track if any swaps were made
+        swapped = False
+
+        # Iterate through the list, comparing adjacent elements
+        for j in range(n - i - 1):
+            # If the current element is greater than the next one, swap them
+            if numbers_copy[j] > numbers_copy[j + 1]:
+                numbers_copy[j], numbers_copy[j + 1] = numbers_copy[j + 1], numbers_copy[j]
+                swapped = True
+
+        # If no swaps were made, the list is sorted, so we can break the loop
+        if not swapped:
+            break
+
+    return numbers_copy
+```
+
+**Example Usage**
+---------------
+
+```python
+numbers = [64, 34, 25, 12, 22, 11, 90]
+print("Original List:", numbers)
+print("Sorted List:", bubble_sort(numbers))
+```
+
+This will output:
+
+```
+Original List: [64, 34, 25, 12, 22, 11, 90]
+Sorted List: [11, 12, 22, 25, 34, 64, 90]
+```
+[35m
+[ Prompt: 40.4 t/s | Generation: 10.6 t/s ]
+[0m
+
+Exiting...
+
+Script done on 2026-09-17 09:08:15+08:00 [COMMAND_EXIT_CODE="0"]

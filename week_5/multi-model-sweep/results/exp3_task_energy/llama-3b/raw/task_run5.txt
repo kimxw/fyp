@@ -1,0 +1,64 @@
+## Bubble Sort Function
+
+### Overview
+
+This function implements the bubble sort algorithm to sort a list of numbers in ascending order.
+
+### Code
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Create a copy of the original list to avoid modifying it in place
+    numbers_copy = numbers[:]
+
+    # Get the length of the list
+    n = len(numbers_copy)
+
+    # Iterate over the list n-1 times
+    for i in range(n-1):
+        
+        # Initialize a flag to track if any swaps were made in the current iteration
+        swapped = False
+        
+        # Iterate over the list from the first element to the (n-i-1)th element
+        for j in range(n-i-1):
+            
+            # If the current element is greater than the next element, swap them
+            if numbers_copy[j] > numbers_copy[j+1]:
+                numbers_copy[j], numbers_copy[j+1] = numbers_copy[j+1], numbers_copy[j]
+                swapped = True
+        
+        # If no swaps were made in the current iteration, the list is already sorted
+        if not swapped:
+            break
+    
+    # Return the sorted list
+    return numbers_copy
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted numbers:", sorted_numbers)
+```
+
+### Explanation
+
+1.  The function takes a list of numbers as input and creates a copy of it to avoid modifying the original list in place.
+2.  It iterates over the list `n-1` times, where `n` is the length of the list.
+3.  In each iteration, it compares each pair of adjacent elements and swaps them if they are in the wrong order.
+4.  If no swaps are made in an iteration, it means the list is already sorted, and the function can terminate early.
+5.  Finally, the function returns the sorted list.
+
+### Time Complexity
+
+The time complexity of bubble sort is O(n^2), where `n` is the length of the list. This makes it less efficient than other sorting algorithms like quicksort or mergesort for large datasets. However, bubble sort can be useful for small datasets or educational purposes.

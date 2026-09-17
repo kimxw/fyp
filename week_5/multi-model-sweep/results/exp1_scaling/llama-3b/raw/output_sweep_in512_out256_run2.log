@@ -1,0 +1,66 @@
+Script started on 2026-09-17 10:13:36+08:00 [COMMAND="/home/kimaya-wanjari/fyp/fernandez-cpu-followup/llama.cpp/build/bin/llama-cli -m /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Llama-3.2-3B-Instruct-Q4_K_M.gguf -p Bubble\ sort\ is\ one\ of\ the\ simplest\ sorting\ algorithms\ taught\ in\ introductory\ computer\ science\ courses.\ It\ works\ by\ repeatedly\ stepping\ through\ a\ list\,\ comparing\ each\ pair\ of\ adjacent\ elements\,\ and\ swapping\ them\ if\ they\ are\ in\ the\ wrong\ order.\ This\ process\ is\ repeated\ until\ no\ more\ swaps\ are\ needed\,\ at\ which\ point\ the\ list\ is\ fully\ sorted.\ The\ algorithm\ gets\ its\ name\ because\ smaller\ elements\ slowly\ bubble\ toward\ the\ front\ of\ the\ list\ with\ each\ pass\,\ similar\ to\ how\ bubbles\ rise\ to\ the\ surface\ of\ water.\ Despite\ its\ simplicity\,\ bubble\ sort\ is\ generally\ considered\ inefficient\ for\ large\ datasets\ compared\ to\ algorithms\ like\ quicksort\ or\ mergesort.\ It\ is\ still\ commonly\ used\ as\ a\ teaching\ tool\ because\ its\ logic\ is\ easy\ to\ trace\ by\ hand\ and\ easy\ to\ visualize\ step\ by\ step.\ Many\ textbooks\ introduce\ bubble\ sort\ before\ more\ advanced\ algorithms\ specifically\ because\ its\ behavior\ is\ so\ straightforward\ to\ reason\ about.\ Some\ implementations\ include\ an\ early-exit\ optimization\ that\ stops\ the\ algorithm\ once\ a\ full\ pass\ completes\ with\ no\ swaps\,\ since\ that\ means\ the\ list\ is\ already\ sorted.\ Bubble\ sort\ is\ one\ of\ the\ simplest\ sorting\ algorithms\ taught\ in\ introductory\ computer\ science\ courses.\ It\ works\ by\ repeatedly\ stepping\ through\ a\ list\,\ comparing\ each\ pair\ of\ adjacent\ elements\,\ and\ swapping\ them\ if\ they\ are\ in\ the\ wrong\ order.\ This\ process\ is\ repeated\ until\ no\ more\ swaps\ are\ needed\,\ at\ which\ point\ the\ list\ is\ fully\ sorted.\ The\ algorithm\ gets\ its\ name\ because\ smaller\ elements\ slowly\ bubble\ toward\ the\ front\ of\ the\ list\ with\ each\ pass\,\ similar\ to\ how\ bubbles\ rise\ to\ the\ surface\ of\ water.\ Despite\ its\ simplicity\,\ bubble\ sort\ is\ generally\ considered\ inefficient\ for\ large\ datasets\ compared\ to\ algorithms\ like\ quicksort\ or\ mergesort.\ It\ is\ still\ commonly\ used\ as\ a\ teaching\ tool\ because\ its\ logic\ is\ easy\ to\ trace\ by\ hand\ and\ easy\ to\ visualize\ step\ by\ step.\ Many\ textbooks\ introduce\ bubble\ sort\ before\ more\ advanced\ algorithms\ specifically\ because\ its\ behavior\ is\ so\ straightforward\ to\ reason\ about.\ Some\ implementations\ include\ an\ early-exit\ optimization\ that\ stops\ the\ algorithm\ once\ a\ full\ pass\ completes\ with\ no\ swaps\,\ since\ that\ means\ the\ list\ is\ already\ sorted.\ Bubble\ sort\ is\ one\ of\ the\ simplest\ sorting\ algorithms\ taught\ in\ introductory\ computer\ science\ courses.\ It\ works\ by\ repeatedly\ stepping\ through\ a\ Write\ a\ function\ to\ sort\ a\ list\ of\ numbers\ using\ bubble\ sort. -n 256 -c 4096 -st --no-display-prompt " <not executed on terminal>]
+
+
+Loading model... |-\|/-\|/-\|/-\|/-\ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10791-95ef7fc16
+model      : /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Llama-3.2-3B-Instruct-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+[1m[32m
+> Bubble sort is one of the simplest sorting algorithms taught in introductory computer science courses. It works by repeatedly stepping through a list, comparing each pair of adjacent elements, and swapping them if they are in the wrong order. This process is repeated until no more swaps are needed, at which point the list is fully sorted. The algorithm gets its name because smaller elements slowly bubble toward the front of the list with each pass, similar to how bubbles rise to the surface of w ... (truncated)
+[0mHere is a high-quality, readable, and well-documented implementation of the bubble sort algorithm in Python:
+
+```python
+def bubble_sort(nums):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        nums (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+
+    Example:
+        >>> bubble_sort([64, 34, 25, 12, 22, 11, 90])
+        [11, 12, 22, 25, 34, 64, 90]
+    """
+    # Create a copy of the input list to avoid modifying it in place
+    nums_copy = nums.copy()
+
+    # Get the length of the list
+    n = len(nums_copy)
+
+    # Repeat the process until no more swaps are needed
+    for i in range(n - 1):
+        # Initialize a flag to track if any swaps were made in the current pass
+        swapped = False
+
+        # Iterate through the list from the first element to the (n - i - 1)th element
+        for j in range(n - i - 1):
+            # If the current element is greater than the next element, swap
+[35m
+[ Prompt: 35.1 t/s | Generation: 8.2 t/s ]
+[0m
+
+Exiting...
+
+Script done on 2026-09-17 10:14:22+08:00 [COMMAND_EXIT_CODE="0"]

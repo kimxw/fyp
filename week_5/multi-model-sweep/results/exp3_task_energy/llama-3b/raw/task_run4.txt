@@ -1,0 +1,52 @@
+**Bubble Sort Function**
+=========================
+
+Here's a Python function that implements the bubble sort algorithm to sort a list of numbers.
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+    # Get the length of the list
+    n = len(numbers)
+
+    # Repeat the process until the list is sorted
+    for i in range(n-1):
+        # Initialize a flag to track if any swaps were made
+        swapped = False
+
+        # Iterate through the list from the first element to the second last element
+        for j in range(n-i-1):
+            # If the current element is greater than the next element, swap them
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+                swapped = True
+
+        # If no swaps were made in the last iteration, the list is sorted
+        if not swapped:
+            break
+
+    return numbers
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+print("Original list:", numbers)
+print("Sorted list:", bubble_sort(numbers))
+```
+
+**How it works:**
+
+1.  The function `bubble_sort` takes a list of numbers as input and returns the sorted list.
+2.  It initializes a flag `swapped` to track if any swaps were made during the iteration.
+3.  The outer loop iterates `n-1` times, where `n` is the length of the list.
+4.  In each iteration, the inner loop compares adjacent elements and swaps them if they are in the wrong order.
+5.  If no swaps were made in the last iteration, the list is sorted, and the function returns it.
+
+**Time complexity:** The time complexity of bubble sort is O(n^2) in the worst case. However, it can be improved to O(n) if the list is already sorted or nearly sorted.

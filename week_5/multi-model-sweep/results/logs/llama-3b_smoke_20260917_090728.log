@@ -1,0 +1,32 @@
+=== run_model: llama-3b (smoke) started 2026-09-17T09:07:28+08:00 ===
+log: /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/logs/llama-3b_smoke_20260917_090728.log
+
+>>> exp3_task_energy  (09:07:28)
+=== exp3_task_energy: llama-3b max_tokens=1024 -> /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp3_task_energy/llama-3b_smoke ===
+[1/1] llama-3b
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      ...running (6s)      ...running (7s)      ...running (8s)      ...running (9s)      ...running (10s)      ...running (11s)      ...running (12s)      ...running (13s)      ...running (14s)      ...running (15s)      ...running (16s)      ...running (17s)      ...running (18s)      ...running (19s)      ...running (20s)      ...running (21s)      ...running (22s)      ...running (23s)      ...running (24s)      ...running (25s)      ...running (26s)      ...running (27s)      ...running (28s)      ...running (29s)      ...running (30s)      ...running (31s)      ...running (32s)      ...running (33s)      ...running (34s)      ...running (35s)      ...running (36s)      ...running (37s)      done (~38s, ok=1)          
+      876.8542J 38.263853584s out=370 (think=0) code(has,syntax,pass)=1,0,0 hit_budget=0
+Done: /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp3_task_energy/llama-3b_smoke/sweep_results.csv
+
+>>> exp2_decode_strat  (09:08:16)
+=== exp2_decode_strat: llama-3b budget=256 -> /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp2_decode_strat/out256/llama-3b_smoke ===
+[1/1] llama-3b strategy=greedy run=1/1
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      ...running (6s)      ...running (7s)      ...running (8s)      ...running (9s)      ...running (10s)      ...running (11s)      ...running (12s)      ...running (13s)      ...running (14s)      ...running (15s)      ...running (16s)      ...running (17s)      ...running (18s)      ...running (19s)      ...running (20s)      ...running (21s)      ...running (22s)      ...running (23s)      ...running (24s)      ...running (25s)      ...running (26s)      ...running (27s)      ...running (28s)      ...running (29s)      ...running (30s)      ...running (31s)      ...running (32s)      ...running (33s)      ...running (34s)      ...running (35s)      ...running (36s)      ...running (37s)      ...running (38s)      ...running (39s)      ...running (40s)      done (~41s, ok=1)          
+      988.3141J 41.279129795s out=256 (think=0) code(has,syntax,pass)=1,0,0
+Done: /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp2_decode_strat/out256/llama-3b_smoke/sweep_results.csv
+
+>>> exp1_scaling  (09:09:06)
+=== exp1_scaling: llama-3b -> /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp1_scaling/llama-3b_smoke ===
+[1/2] llama-3b input_sweep in=128 out=64 run=1/1
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      ...running (6s)      ...running (7s)      ...running (8s)      ...running (9s)      ...running (10s)      ...running (11s)      done (~12s, ok=1)          
+      276.4284J 12.081825968s tokens(in,out)=104,64 tput=39.6,10.7
+[2/2] llama-3b output_sweep in=512 out=8 run=1/1
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      ...running (6s)      ...running (7s)      ...running (8s)      ...running (9s)      ...running (10s)      ...running (11s)      ...running (12s)      ...running (13s)      done (~14s, ok=1)          
+      373.5640J 14.097964728s tokens(in,out)=422,7 tput=40.1,10.0
+Done: /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp1_scaling/llama-3b_smoke/sweep_results.csv
+
+=== run_model: llama-3b finished 2026-09-17T09:09:49+08:00 ===
+done:    exp3_task_energy exp2_decode_strat exp1_scaling
+skipped: none
+failed:  none
+log:     /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/logs/llama-3b_smoke_20260917_090728.log

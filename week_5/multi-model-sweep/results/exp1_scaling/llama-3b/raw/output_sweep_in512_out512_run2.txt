@@ -1,0 +1,61 @@
+## Bubble Sort Function in Python
+### Overview
+
+Bubble sort is a simple sorting algorithm that repeatedly steps through a list, compares each pair of adjacent items, and swaps them if they are in the wrong order. This process is repeated until the list is sorted.
+
+### Implementation
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using bubble sort.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Get the length of the list
+    n = len(numbers)
+
+    # Repeat the process until no more swaps are needed
+    for i in range(n):
+        # Initialize a flag to track if any swaps were made
+        swapped = False
+
+        # Compare each pair of adjacent items and swap if necessary
+        for j in range(n - i - 1):
+            if numbers[j] > numbers[j + 1]:
+                # Swap the items
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+                # Set the flag to True
+                swapped = True
+
+        # If no swaps were made, the list is already sorted
+        if not swapped:
+            break
+
+    return numbers
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+print("Original list:", numbers)
+print("Sorted list:", bubble_sort(numbers))
+```
+
+### Explanation
+
+This function takes a list of numbers as input and returns the sorted list. It uses the bubble sort algorithm to sort the list.
+
+Here's a step-by-step explanation of the implementation:
+
+1.  Get the length of the list (`n = len(numbers)`).
+2.  Repeat the process until no more swaps are needed (`for i in range(n):`).
+3.  Initialize a flag (`swapped = False`) to track if any swaps were made.
+4.  Compare each pair of adjacent items and swap if necessary (`for j in range(n - i - 1): if numbers[j] > numbers[j + 1]:`).
+5.  If no swaps were made, the list is already sorted, so exit the loop (`if not swapped: break`).
+6.  Return the sorted list (`return numbers`).
+
+This implementation includes an early-exit optimization, which stops the algorithm once a full pass completes with no swaps, since that means the list is already sorted.

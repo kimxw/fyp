@@ -1,0 +1,6 @@
+=== run_model: llama-3b started 2026-09-17T09:09:56+08:00 ===
+log: /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/logs/llama-3b_20260917_090956.log
+
+>>> exp3_task_energy  (09:09:56)
+=== exp3_task_energy: llama-3b max_tokens=1024 -> /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp3_task_energy/llama-3b ===
+[1/5] llama-3b

@@ -1,0 +1,40 @@
+# Bubble Sort Function
+## Overview
+This function implements the bubble sort algorithm to sort a list of numbers in ascending order.
+
+## Code
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Get the length of the list
+    n = len(numbers)
+
+    # Repeat the process until no more swaps are needed
+    for i in range(n):
+        # Initialize a flag to track if any swaps were made
+        swapped = False
+
+        # Iterate through the list, comparing each pair of adjacent elements
+        for j in range(n - i - 1):
+            # If the current element is greater than the next element, swap them
+            if numbers[j] > numbers[j + 1]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+                swapped = True
+
+        # If no swaps were made in the last pass, the list is already sorted
+        if not swapped:
+            break
+
+    return numbers
+
+# Example usage:
+numbers = [64, 34, 25

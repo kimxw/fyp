@@ -1,0 +1,62 @@
+# Bubble Sort Function
+## Overview
+
+This function implements the bubble sort algorithm, which is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.
+
+## Code
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers in ascending order using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+    # Get the length of the list
+    n = len(numbers)
+
+    # Repeat the process until the list is sorted
+    for i in range(n):
+        # Initialize a flag to check if any swaps were made in the current pass
+        swapped = False
+        
+        # Iterate over the list from the first element to the (n-i-1)th element
+        for j in range(n - i - 1):
+            # If the current element is greater than the next element, swap them
+            if numbers[j] > numbers[j + 1]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+                swapped = True
+        
+        # If no swaps were made in the current pass, the list is sorted and we can break out of the loop
+        if not swapped:
+            break
+    
+    return numbers
+
+# Example usage
+numbers = [64, 34, 25, 12, 22, 11, 90]
+print("Original list:", numbers)
+print("Sorted list:", bubble_sort(numbers))
+```
+
+## Explanation
+
+This function takes a list of numbers as input and returns the sorted list. It uses the bubble sort algorithm, which is an in-place sorting algorithm, meaning it does not require any additional space.
+
+The function first gets the length of the input list and then repeats the process until the list is sorted. In each pass, it compares adjacent elements and swaps them if they are in the wrong order.
+
+The function uses a flag variable `swapped` to check if any swaps were made in the current pass. If no swaps were made, it means the list is sorted and we can break out of the loop.
+
+Finally, the function returns the sorted list.
+
+## Time Complexity
+
+The time complexity of this function is O(n^2), where n is the length of the input list. This is because the function uses a nested loop to compare each pair of elements in the list.
+
+## Space Complexity
+
+The space complexity of this function is O(1), which means the function uses constant space. This is because the function only uses a single list to store the input and sorted values, and does not require any additional space that scales with the size of the input.
