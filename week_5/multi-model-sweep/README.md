@@ -24,8 +24,10 @@ Same rig (Lenovo, llama.cpp, RAPL package-0), same task, Q4_K_M for every model.
 - `RUNBOOK.md` - every command to run, in order
 - `scripts/` - `exp1_scaling.sh`, `exp2_decode_strat.sh`, `exp3_task_energy.sh` (each takes a model key),
   plus `models.sh` (registry), `common.sh` (shared helpers), `check_code.py`, `download_models.sh`,
-  `check_setup.sh`, `combine_results.sh`, `rescore_code.py`, `preflight.sh`
-- `results/<experiment>/<model-key>/` - `sweep_results.csv`, `timeseries.csv`, `meta.txt`, `raw/`
+  `check_setup.sh`, `combine_results.sh`, `rescore_code.py`, `record_hardware.sh`, `combine_machines.py`, `preflight.sh`
+- `results/<experiment>/<model-key>/` - `sweep_results.csv`, `timeseries.csv`, `meta.txt`, `raw/` (Lenovo IdeaPad Flex 5)
+- `results_<machine>/` - same layout for other hardware (`MACHINE=<label>`), plus `hardware.txt`
+- `hardware_comparison/` - cross-machine CSVs from `combine_machines.py`
 
 ## More data points
 - 8 input lengths and 8 output lengths (week 3: 5 and 6), 5 repeats instead of 3

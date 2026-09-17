@@ -13,6 +13,7 @@
 # one is started again from scratch, overwriting its partial results.
 #
 # Usage:       ./run_model.sh <model-key>
+# Other machine: MACHINE=<label> ./run_model.sh <model-key>   (results_<label>/)
 # Smoke test:  ./run_model.sh <model-key> --smoke     (1 run each, tagged _smoke)
 # Any env options (RUNS, COOLDOWN, THREADS...) pass through to every experiment.
 
@@ -29,11 +30,16 @@ if [ "$MODE" = "--smoke" ]; then
 fi
 
 mkdir -p "$RESULTS_DIR/logs"
+# one-off hardware record per results folder (asks for sudo the first time)
+if [ ! -s "$RESULTS_DIR/hardware.txt" ]; then
+  "$SCRIPT_DIR/record_hardware.sh" || echo "WARNING: hardware.txt not recorded; run ./record_hardware.sh later"
+fi
 STAMP=$(date +%Y%m%d_%H%M%S)
 LOG="$RESULTS_DIR/logs/${MODEL_KEY}${TAG:+_$TAG}_${STAMP}.log"
 exec > >(tee -a "$LOG") 2>&1
 
 echo "=== run_model: $MODEL_KEY ${TAG:+($TAG) }started $(date -Iseconds) ==="
+echo "machine: ${MACHINE:-default (Lenovo, results/)}   results: $RESULTS_DIR"
 echo "log: $LOG"
 
 declare -a DONE SKIPPED FAILED

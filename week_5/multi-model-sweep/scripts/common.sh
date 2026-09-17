@@ -4,10 +4,24 @@
 # Paths can be overridden with environment variables. Defaults assume the
 # Lenovo layout from week 3, where llama.cpp and the models already live:
 #   ~/fyp/fernandez-cpu-followup/{llama.cpp,models}
+#
+# MACHINE: short label for the hardware the sweep runs on (letters, digits,
+# . _ -). When set, results go to results_<MACHINE>/ instead of results/, so
+# runs from different machines never mix. results/ (no label) holds the
+# original Lenovo IdeaPad Flex 5 runs.
 
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 WEEK5_DIR=$(dirname "$SCRIPT_DIR")
-RESULTS_DIR=${RESULTS_DIR:-$WEEK5_DIR/results}
+MACHINE=${MACHINE:-}
+if [ -n "$MACHINE" ]; then
+  if ! [[ "$MACHINE" =~ ^[A-Za-z0-9._-]+$ ]]; then
+    echo "ERROR: MACHINE='$MACHINE' may only contain letters, digits, . _ -" >&2
+    exit 1
+  fi
+  RESULTS_DIR=${RESULTS_DIR:-$WEEK5_DIR/results_$MACHINE}
+else
+  RESULTS_DIR=${RESULTS_DIR:-$WEEK5_DIR/results}
+fi
 LLAMA_DIR=${LLAMA_DIR:-$HOME/fyp/fernandez-cpu-followup/llama.cpp}
 MODELS_DIR=${MODELS_DIR:-$HOME/fyp/fernandez-cpu-followup/models}
 BIN=$LLAMA_DIR/build/bin/llama-cli
@@ -130,6 +144,39 @@ prepare_exp_dir() {
   TS_OUT=$EXP_DIR/timeseries.csv
 }
 
+# llama.cpp build identifier. Only trusts git if llama.cpp is its own repo
+# (otherwise git walks up to an enclosing repo, e.g. ~/fyp, and reports that
+# commit instead), and falls back to the binary's own --version output.
+# Must match across machines for a fair hardware comparison.
+llama_cpp_version() {
+  if [ -e "$LLAMA_DIR/.git" ]; then
+    git -C "$LLAMA_DIR" rev-parse --short HEAD 2>/dev/null && return
+  fi
+  "$BIN" --version 2>&1 | grep -m1 -i "version" || echo unknown
+}
+
+# Hardware facts readable without sudo (full details: record_hardware.sh)
+hardware_summary() {
+  local rdir cpu cores flags limits c name uw
+  rdir=$(dirname "$RAPL")
+  cpu=$(lscpu 2>/dev/null | sed -n 's/^Model name:[[:space:]]*//p' | head -1)
+  cores=$(lscpu -p=CORE 2>/dev/null | grep -v '^#' | sort -u | wc -l)
+  flags=$(grep -o -w -E 'avx2|avx_vnni|avx512f' /proc/cpuinfo 2>/dev/null | sort -u | tr '\n' ' ')
+  limits=""
+  for c in 0 1 2; do
+    name=$(cat "$rdir/constraint_${c}_name" 2>/dev/null) || continue
+    uw=$(cat "$rdir/constraint_${c}_power_limit_uw" 2>/dev/null || echo 0)
+    limits+="$name=$(( uw / 1000000 ))W "
+  done
+  echo "machine: ${MACHINE:-lenovo-flex5-14iau7 (default results/)}"
+  echo "cpu_model: ${cpu:-unknown}"
+  echo "cpu_cores: $cores  cpu_threads: $(nproc --all)"
+  echo "cpu_flags: ${flags:-none found}"
+  echo "ram_total: $(free -h | awk '/^Mem:/{print $2}')"
+  echo "rapl_power_limits: ${limits:-unreadable}"
+  echo "kernel: $(uname -r)"
+}
+
 # write_meta <extra lines...>  -- records the conditions a sweep ran under
 write_meta() {
   {
@@ -138,10 +185,11 @@ write_meta() {
     echo "model_key: $MODEL_KEY"
     echo "model_file: $MODEL_PATH ($(du -h "$MODEL_PATH" | cut -f1))"
     echo "model_repo: $MODEL_REPO"
-    echo "llama_cpp_commit: $(git -C "$LLAMA_DIR" rev-parse --short HEAD 2>/dev/null || echo unknown)"
+    echo "llama_cpp_version: $(llama_cpp_version)"
     echo "governor: $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor 2>/dev/null || echo NA)"
     echo "runs: $RUNS  cooldown_s: $COOLDOWN  threads: ${THREADS:-default}"
     echo "test_mode: ${TEST_MODE:-0}"
+    hardware_summary
     for line in "$@"; do echo "$line"; done
   } > "$EXP_DIR/meta.txt"
 }

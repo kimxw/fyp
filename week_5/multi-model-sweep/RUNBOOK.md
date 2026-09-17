@@ -202,3 +202,52 @@ Total: roughly 12-15 hours of rig time. Run exp1 overnight in tmux.
 - New columns: thinking vs answer tokens, `hit_budget`, whether the code has valid syntax and passes tests, and `run_ok` (a failed run is recorded instead of stopping the sweep).
 - The RAPL counter wrapping around is handled. A `meta.txt` per sweep records the llama.cpp commit, governor, lengths and sampling.
 - Refuses to overwrite existing results, which avoids the half-overwritten folders from week 3's Exp 3.
+
+---
+
+## Running on another machine (hardware comparison)
+
+Everything is the same except a `MACHINE` label, which sends results to `results_<MACHINE>/`
+(`results/` stays the Lenovo IdeaPad Flex 5). Example: the 8th-gen laptop, label `i7-8665u`.
+
+**Keep these identical to the Lenovo, or the comparison isn't just hardware:**
+```bash
+# on the Lenovo: note the llama.cpp commit and the model checksum
+git -C ~/fyp/fernandez-cpu-followup/llama.cpp rev-parse --short HEAD
+sha256sum ~/fyp/fernandez-cpu-followup/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf
+```
+
+**Set up the other machine (once):**
+```bash
+git clone https://github.com/kimxw/fyp.git ~/fyp
+git clone https://github.com/ggml-org/llama.cpp ~/llama.cpp
+cd ~/llama.cpp && git checkout <lenovo-commit>
+cmake -B build && cmake --build build --config Release -j     # same build steps as the Lenovo
+mkdir -p ~/models   # copy the .gguf over from the Lenovo (USB/scp), then check sha256sum matches
+```
+
+**Every session on that machine:**
+```bash
+cd ~/fyp/week_5/multi-model-sweep/scripts
+export MACHINE=i7-8665u LLAMA_DIR=~/llama.cpp MODELS_DIR=~/models
+./preflight.sh
+./check_setup.sh                 # prints machine, CPU, RAM, llama.cpp version
+./run_model.sh llama-1b --smoke
+./run_model.sh llama-1b          # results_i7-8665u/... ; writes results_i7-8665u/hardware.txt first (asks for sudo)
+python3 rescore_code.py ../results_i7-8665u
+```
+Then commit + push `results_i7-8665u/`.
+
+**Record the Lenovo's hardware too** (once, on the Lenovo): `./record_hardware.sh` writes `results/hardware.txt`.
+(`run_model.sh` also does this automatically the next time it runs there.)
+
+**Combine for a hardware report** (any machine, after pulling):
+```bash
+python3 scripts/combine_machines.py exp1_scaling --model llama-1b
+python3 scripts/combine_machines.py exp2_decode_strat --rescored --model llama-1b
+python3 scripts/combine_machines.py exp3_task_energy --rescored --model llama-1b
+# -> hardware_comparison/<exp>..._all_machines.csv, with a `machine` column
+```
+Every `meta.txt` now also records the machine label, CPU model, cores/threads, AVX flags, RAM,
+RAPL power limits and the real llama.cpp version. `hardware.txt` adds memory modules
+(single vs dual channel), laptop model and full `lscpu`.
