@@ -1,0 +1,19 @@
+Here's a function that implements the bubble sort algorithm in Python:
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers in ascending order using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+
+    Example:
+        >>> bubble_sort([64, 34, 25, 12, 22, 11, 90])
+        [11, 12, 22, 25, 34, 64, 90]
+    """
+    n = len(numbers)
+    for i

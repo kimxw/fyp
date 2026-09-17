@@ -1,0 +1,48 @@
+Script started on 2026-09-17 13:02:22+08:00 [COMMAND="/opt/fyp/llama.cpp/build/bin/llama-cli -m /home/axgopala/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf -p Bubble\ sort\ is\ one\ of\ the\ simplest\ sorting\ algorithms\ taught\ in\ introductory\ computer\ science\ courses.\ It\ works\ by\ repeatedly\ stepping\ through\ a\ list\,\ comparing\ each\ pair\ of\ adjacent\ elements\,\ and\ swapping\ them\ if\ they\ are\ in\ the\ wrong\ order.\ This\ process\ is\ repeated\ until\ no\ more\ swaps\ are\ needed\,\ at\ which\ point\ the\ list\ is\ fully\ sorted.\ The\ algorithm\ gets\ its\ name\ because\ smaller\ elements\ slowly\ bubble\ toward\ the\ front\ of\ the\ list\ with\ each\ pass\,\ similar\ to\ how\ bubbles\ rise\ to\ the\ surface\ Write\ a\ function\ to\ sort\ a\ list\ of\ numbers\ using\ bubble\ sort. -n 64 -c 4096 -st --no-display-prompt " <not executed on terminal>]
+
+
+Loading model... |-\|/-\|/-\|/ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b11011-aa39d7a3e
+model      : /home/axgopala/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+[1m[32m
+> Bubble sort is one of the simplest sorting algorithms taught in introductory computer science courses. It works by repeatedly stepping through a list, comparing each pair of adjacent elements, and swapping them if they are in the wrong order. This process is repeated until no more swaps are needed, at which point the list is fully sorted. The algorithm gets its name because smaller elements slowly bubble toward the front of the list with each pass, similar to how bubbles rise to the surface Writ ... (truncated)
+[0m**Bubble Sort Implementation**
+==========================
+
+Here's a well-documented and readable implementation of the bubble sort algorithm in Python:
+
+```python
+def bubble_sort(nums):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        nums (list): A list of numbers to be sorted.
+
+[35m
+[ Prompt: 149.4 t/s | Generation: 20.2 t/s ]
+[0m
+
+Exiting...
+
+Script done on 2026-09-17 13:02:28+08:00 [COMMAND_EXIT_CODE="0"]

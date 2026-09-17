@@ -1,0 +1,40 @@
+Here's a Python implementation of the bubble sort algorithm:
+
+```python
+def bubble_sort(lst):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+    lst (list): The list of numbers to sort.
+
+    Returns:
+    list: The sorted list of numbers.
+    """
+
+    # Check if the input is a list
+    if not isinstance(lst, list):
+        raise TypeError("Input must be a list")
+
+    # Check if the list is empty
+    if len(lst) == 0:
+        return lst
+
+    # Get the length of the list
+    n = len(lst)
+
+    # Iterate over the list until no more swaps are needed
+    for i in range(n-1):
+        # Check if the list is empty
+        if i == n-1:
+            return lst
+
+        # Initialize a flag to check if any swaps were made
+        swapped = False
+
+        # Iterate over the list from the first element to the (n-i-1)th element
+        for j in range(i+1, n-i):
+            # Check if the elements are in the wrong order
+            if lst[i] > lst[j]:
+                # Swap the elements
+                lst[i], lst[j]

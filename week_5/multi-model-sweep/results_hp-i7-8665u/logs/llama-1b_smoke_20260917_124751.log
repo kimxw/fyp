@@ -1,0 +1,33 @@
+=== run_model: llama-1b (smoke) started 2026-09-17T12:47:51+08:00 ===
+machine: hp-i7-8665u   results: /opt/fyp/week_5/multi-model-sweep/results_hp-i7-8665u
+log: /opt/fyp/week_5/multi-model-sweep/results_hp-i7-8665u/logs/llama-1b_smoke_20260917_124751.log
+
+>>> exp3_task_energy  (12:47:51)
+=== exp3_task_energy: llama-1b max_tokens=1024 -> /opt/fyp/week_5/multi-model-sweep/results_hp-i7-8665u/exp3_task_energy/llama-1b_smoke ===
+[1/1] llama-1b
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      ...running (6s)      ...running (7s)      ...running (8s)      ...running (9s)      ...running (10s)      ...running (11s)      ...running (12s)      ...running (13s)      ...running (14s)      ...running (15s)      ...running (16s)      ...running (17s)      ...running (18s)      ...running (19s)      ...running (20s)      done (~21s, ok=1)          
+      655.8323J 21.162172524s out=358 (think=0) code(has,syntax,pass)=1,1,1 hit_budget=0
+Done: /opt/fyp/week_5/multi-model-sweep/results_hp-i7-8665u/exp3_task_energy/llama-1b_smoke/sweep_results.csv
+
+>>> exp2_decode_strat  (12:48:22)
+=== exp2_decode_strat: llama-1b budget=256 -> /opt/fyp/week_5/multi-model-sweep/results_hp-i7-8665u/exp2_decode_strat/out256/llama-1b_smoke ===
+[1/1] llama-1b strategy=greedy run=1/1
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      ...running (6s)      ...running (7s)      ...running (8s)      ...running (9s)      ...running (10s)      ...running (11s)      ...running (12s)      ...running (13s)      ...running (14s)      ...running (15s)      ...running (16s)      ...running (17s)      ...running (18s)      done (~19s, ok=1)          
+      455.9723J 19.160137147s out=256 (think=0) code(has,syntax,pass)=1,1,1
+Done: /opt/fyp/week_5/multi-model-sweep/results_hp-i7-8665u/exp2_decode_strat/out256/llama-1b_smoke/sweep_results.csv
+
+>>> exp1_scaling  (12:48:50)
+=== exp1_scaling: llama-1b -> /opt/fyp/week_5/multi-model-sweep/results_hp-i7-8665u/exp1_scaling/llama-1b_smoke ===
+[1/2] llama-1b input_sweep in=128 out=64 run=1/1
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      done (~6s, ok=1)          
+      178.7329J 6.044077297s tokens(in,out)=104,64 tput=150.4,20.2
+[2/2] llama-1b output_sweep in=512 out=8 run=1/1
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      done (~5s, ok=1)          
+      188.6622J 5.036307696s tokens(in,out)=422,8 tput=149.9,19.5
+Done: /opt/fyp/week_5/multi-model-sweep/results_hp-i7-8665u/exp1_scaling/llama-1b_smoke/sweep_results.csv
+
+=== run_model: llama-1b finished 2026-09-17T12:49:18+08:00 ===
+done:    exp3_task_energy exp2_decode_strat exp1_scaling
+skipped: none
+failed:  none
+log:     /opt/fyp/week_5/multi-model-sweep/results_hp-i7-8665u/logs/llama-1b_smoke_20260917_124751.log

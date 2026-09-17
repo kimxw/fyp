@@ -1,0 +1,36 @@
+Here is a Python function to sort a list of numbers using bubble sort:
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using bubble sort.
+
+    Args:
+        numbers (list): The list of numbers to sort.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+    for i in range(len(numbers)):
+        # Create a copy of the list to avoid modifying the original
+        numbers_copy = numbers[:]
+
+        # Get the last element of the list
+        last_element = numbers_copy.pop()
+
+        # Find the correct position for the last element
+        for j in range(i, len(numbers_copy)):
+            # If the last element is greater than the current element, swap them
+            if numbers_copy[j] > last_element:
+                numbers_copy[j], numbers_copy[i] = numbers_copy[i], numbers_copy[j]
+
+    return numbers
+```
+Here's an example of how to use this function:
+```python
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted numbers:", sorted_numbers)
+```
+This will output:
+```
+Sorted numbers: [11, 12, 22,

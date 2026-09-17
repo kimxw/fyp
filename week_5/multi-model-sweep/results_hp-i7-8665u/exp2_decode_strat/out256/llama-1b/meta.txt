@@ -1,0 +1,21 @@
+date: 2026-09-17T12:52:22+08:00
+host: dogmatix
+model_key: llama-1b
+model_file: /home/axgopala/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf (771M)
+model_repo: bartowski/Llama-3.2-1B-Instruct-GGUF
+llama_cpp_version: aa39d7a3e
+governor: performance
+runs: 5  cooldown_s: 8  threads: default
+test_mode: 0
+machine: hp-i7-8665u
+cpu_model: Intel(R) Core(TM) i7-8665U CPU @ 1.90GHz
+cpu_cores: 4  cpu_threads: 8
+cpu_flags: avx2 
+ram_total: 15Gi
+rapl_power_limits: long_term=200W short_term=51W 
+kernel: 6.8.0-134-generic
+experiment: exp2_decode_strat
+input_requested: 512
+output_budget: 256
+ctx: 4096
+strategies: greedy=[--temp 0] temperature=[--temp 0.8 --top-k 0 --top-p 1.0 --min-p 0.0] top_p=[--temp 0.8 --top-k 0 --top-p 0.9 --min-p 0.0] top_k=[--temp 0.8 --top-k 40 --top-p 1.0 --min-p 0.0] 

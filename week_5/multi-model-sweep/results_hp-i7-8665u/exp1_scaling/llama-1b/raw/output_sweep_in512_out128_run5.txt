@@ -1,0 +1,25 @@
+**Bubble Sort Function Implementation**
+=====================================
+
+Here's a well-documented, readable, and efficient implementation of the bubble sort algorithm in Python:
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: A sorted list of numbers.
+    """
+
+    # Get the length of the input list
+    n = len(numbers)
+
+    # Traverse through all array elements
+    for i in range(n - 1):
+        
+        # Last i elements are already in place
+       

@@ -1,0 +1,2 @@
+model,is_reasoning,max_tokens,input_tokens_actual,output_tokens_actual,think_tokens,answer_tokens,hit_budget,has_code,syntax_ok,passes_tests,prefill_tokens_per_sec,decode_tokens_per_sec,cpu_freq_khz,timestamp,run,energy_joules,wall_seconds,run_ok
+llama-1b,0,1024,13,358,0,358,0,1,1,1,146.7,19.3,4698895,2026-09-17T12:48:00+08:00,1,655.8323,21.162172524,1

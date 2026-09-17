@@ -1,0 +1,55 @@
+**Bubble Sort Function**
+========================
+
+Here is a Python function that implements the bubble sort algorithm to sort a list of numbers.
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Get the length of the input list
+    n = len(numbers)
+
+    # If the list is empty or contains only one element, it's already sorted
+    if n <= 1:
+        return numbers
+
+    # Perform bubble sort for n-1 passes
+    for i in range(n - 1):
+        # Create a flag that will allow the function to terminate early if there's nothing left to sort
+        swapped = False
+
+        # Start looking at each item of the list one by one, comparing it with its adjacent value
+        for j in range(n - i - 1):
+            # If we find a pair of adjacent items in the list that are in the wrong order, swap them immediately
+            if numbers[j] > numbers[j + 1]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+                swapped = True
+
+        # If no swaps were made in the last iteration, that means the list was already sorted
+        if not swapped:
+            break
+
+    return numbers
+```
+
+**Example Use Case**
+--------------------
+
+```python
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print(sorted_numbers)
+```
+
+This will output the sorted list of numbers: `[11, 12, 22, 25, 34, 64, 90]`.
+
+**Note**: Bubble sort has a time complexity of O(n^2) in the worst case, making it less efficient than other sorting algorithms like quicksort or mergesort for large datasets. However, it's simple to implement and can be useful for small datasets or educational purposes.

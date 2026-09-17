@@ -1,0 +1,90 @@
+Script started on 2026-09-17 12:51:56+08:00 [COMMAND="/opt/fyp/llama.cpp/build/bin/llama-cli -m /home/axgopala/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf -p Write\ a\ function\ to\ sort\ a\ list\ of\ numbers\ using\ bubble\ sort. -n 1024 -c 2048 -st --no-display-prompt --temp 0.6 --top-p 0.95 --top-k 0 --min-p 0.0 " <not executed on terminal>]
+
+
+Loading model... |-\|/-\|/-\|/ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b11011-aa39d7a3e
+model      : /home/axgopala/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+[1m[32m
+> Write a function to sort a list of numbers using bubble sort.
+[0m**Bubble Sort Function**
+========================
+
+Here is a Python function that implements the bubble sort algorithm to sort a list of numbers.
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+
+    # Get the length of the input list
+    n = len(numbers)
+
+    # If the list is empty or contains only one element, it's already sorted
+    if n <= 1:
+        return numbers
+
+    # Perform bubble sort for n-1 passes
+    for i in range(n - 1):
+        # Create a flag that will allow the function to terminate early if there's nothing left to sort
+        swapped = False
+
+        # Start looking at each item of the list one by one, comparing it with its adjacent value
+        for j in range(n - i - 1):
+            # If we find a pair of adjacent items in the list that are in the wrong order, swap them immediately
+            if numbers[j] > numbers[j + 1]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+                swapped = True
+
+        # If no swaps were made in the last iteration, that means the list was already sorted
+        if not swapped:
+            break
+
+    return numbers
+```
+
+**Example Use Case**
+--------------------
+
+```python
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print(sorted_numbers)
+```
+
+This will output the sorted list of numbers: `[11, 12, 22, 25, 34, 64, 90]`.
+
+**Note**: Bubble sort has a time complexity of O(n^2) in the worst case, making it less efficient than other sorting algorithms like quicksort or mergesort for large datasets. However, it's simple to implement and can be useful for small datasets or educational purposes.
+[35m
+[ Prompt: 147.9 t/s | Generation: 19.0 t/s ]
+[0m
+
+Exiting...
+
+Script done on 2026-09-17 12:52:20+08:00 [COMMAND_EXIT_CODE="0"]

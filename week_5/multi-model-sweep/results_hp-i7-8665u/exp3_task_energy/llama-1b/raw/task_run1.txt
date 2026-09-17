@@ -1,0 +1,56 @@
+**Bubble Sort Function in Python**
+=====================================
+
+Here's a well-documented and readable implementation of the bubble sort algorithm in Python:
+
+```python
+def bubble_sort(numbers):
+    """
+    Sorts a list of numbers using the bubble sort algorithm.
+
+    Args:
+        numbers (list): A list of numbers to be sorted.
+
+    Returns:
+        list: The sorted list of numbers.
+    """
+    n = len(numbers)
+
+    for i in range(n-1):
+        # Create a flag that will allow the function to terminate early if there's nothing left to sort
+        swapped = False
+
+        # Start looking at each item of the list one by one, comparing it with its adjacent value
+        for j in range(n-i-1):
+            # If we come across an element that is greater than its adjacent element,
+            # then swap them
+            if numbers[j] > numbers[j+1]:
+                # Swap values
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+                # We must tell someone, but we can't be bothered
+                swapped = True
+
+        # If no two elements were in the wrong order, the list is sorted
+        if not swapped:
+            break
+
+    return numbers
+
+# Example usage:
+numbers = [64, 34, 25, 12, 22, 11, 90]
+sorted_numbers = bubble_sort(numbers)
+print("Sorted numbers:", sorted_numbers)
+```
+
+**How the Bubble Sort Works**
+------------------------------
+
+The bubble sort algorithm works by repeatedly swapping the adjacent elements if they are in the wrong order.
+
+Here's a step-by-step explanation of the algorithm:
+
+1.  Initialize the list with the first element.
+2.  Compare each pair of adjacent elements. If they are in the wrong order, swap them.
+3.  Continue the process until the entire list is sorted.
+
+**Note**: The bubble sort algorithm has a time complexity of O(n^2), making it less efficient than other sorting algorithms like quicksort or mergesort for large datasets. However, it can still be useful for small datasets or educational purposes.
