@@ -1,0 +1,32 @@
+=== run_model: qwen-coder-1.5b (smoke) started 2026-09-17T10:35:54+08:00 ===
+log: /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/logs/qwen-coder-1.5b_smoke_20260917_103554.log
+
+>>> exp3_task_energy  (10:35:54)
+=== exp3_task_energy: qwen-coder-1.5b max_tokens=1024 -> /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp3_task_energy/qwen-coder-1.5b_smoke ===
+[1/1] qwen-coder-1.5b
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      ...running (6s)      ...running (7s)      ...running (8s)      ...running (9s)      ...running (10s)      ...running (11s)      ...running (12s)      ...running (13s)      ...running (14s)      ...running (15s)      ...running (16s)      ...running (17s)      ...running (18s)      ...running (19s)      ...running (20s)      ...running (21s)      ...running (22s)      ...running (23s)      ...running (24s)      done (~25s, ok=1)          
+      564.5468J 25.174911867s out=494 (think=0) code(has,syntax,pass)=1,1,1 hit_budget=0
+Done: /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp3_task_energy/qwen-coder-1.5b_smoke/sweep_results.csv
+
+>>> exp2_decode_strat  (10:36:28)
+=== exp2_decode_strat: qwen-coder-1.5b budget=256 -> /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp2_decode_strat/out256/qwen-coder-1.5b_smoke ===
+[1/1] qwen-coder-1.5b strategy=greedy run=1/1
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      ...running (6s)      ...running (7s)      ...running (8s)      ...running (9s)      ...running (10s)      ...running (11s)      ...running (12s)      ...running (13s)      ...running (14s)      ...running (15s)      ...running (16s)      ...running (17s)      ...running (18s)      done (~19s, ok=1)          
+      452.1850J 19.131519937s out=255 (think=0) code(has,syntax,pass)=1,1,1
+Done: /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp2_decode_strat/out256/qwen-coder-1.5b_smoke/sweep_results.csv
+
+>>> exp1_scaling  (10:36:56)
+=== exp1_scaling: qwen-coder-1.5b -> /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp1_scaling/qwen-coder-1.5b_smoke ===
+[1/2] qwen-coder-1.5b input_sweep in=128 out=64 run=1/1
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      done (~6s, ok=1)          
+      131.1828J 6.042125056s tokens(in,out)=103,63 tput=83.1,22.2
+[2/2] qwen-coder-1.5b output_sweep in=512 out=8 run=1/1
+      ...running (0s)      ...running (1s)      ...running (2s)      ...running (3s)      ...running (4s)      ...running (5s)      ...running (6s)      done (~7s, ok=1)          
+      169.7760J 7.050158875s tokens(in,out)=421,7 tput=87.5,21.5
+Done: /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/exp1_scaling/qwen-coder-1.5b_smoke/sweep_results.csv
+
+=== run_model: qwen-coder-1.5b finished 2026-09-17T10:37:25+08:00 ===
+done:    exp3_task_energy exp2_decode_strat exp1_scaling
+skipped: none
+failed:  none
+log:     /home/kimaya-wanjari/fyp/week_5/multi-model-sweep/results/logs/qwen-coder-1.5b_smoke_20260917_103554.log

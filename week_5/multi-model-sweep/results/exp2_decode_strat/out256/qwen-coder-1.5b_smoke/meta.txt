@@ -1,0 +1,14 @@
+date: 2026-09-17T10:36:28+08:00
+host: fyp-rig
+model_key: qwen-coder-1.5b
+model_file: /home/kimaya-wanjari/fyp/fernandez-cpu-followup/models/Qwen2.5-Coder-1.5B-Instruct-Q4_K_M.gguf (941M)
+model_repo: bartowski/Qwen2.5-Coder-1.5B-Instruct-GGUF
+llama_cpp_commit: eed365e
+governor: performance
+runs: 1  cooldown_s: 8  threads: default
+test_mode: 1
+experiment: exp2_decode_strat
+input_requested: 512
+output_budget: 256
+ctx: 4096
+strategies: greedy=[--temp 0] 

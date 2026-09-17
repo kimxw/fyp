@@ -1,0 +1,2 @@
+model,strategy,output_budget,input_tokens_actual,output_tokens_actual,think_tokens,answer_tokens,hit_budget,contains_return,has_code,syntax_ok,passes_tests,prefill_tokens_per_sec,decode_tokens_per_sec,cpu_freq_khz,timestamp,run,energy_joules,wall_seconds,run_ok
+qwen-coder-1.5b,greedy,256,421,255,0,255,1,1,1,1,1,86.3,21.2,400000,2026-09-17T10:36:36+08:00,1,452.1850,19.131519937,1
